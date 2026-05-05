@@ -340,6 +340,9 @@ function PostCard({ p }) {
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 px-5 pt-5 pb-3">
+         {/* <div className="absolute top-3 left-[500px] px-4 py-2 bg-gray-200 cursor-pointer" onClick={() =>{
+          
+         }}>delete</div> */}
         <div className="w-10 h-10 rounded-full overflow-hidden bg-violet-100 flex-shrink-0">
           {p.profilePic ? (
             <img
@@ -353,6 +356,7 @@ function PostCard({ p }) {
             </div>
           )}
         </div>
+      
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-sm font-semibold text-slate-900">
@@ -364,10 +368,11 @@ function PostCard({ p }) {
               </span>
             )}
           </div>
+         
           <p className="text-xs text-slate-400 mt-0.5">Recently posted</p>
         </div>
       </div>
-
+   
       {/* Body */}
       <div className="px-5 pb-3">
         <p className="text-sm text-slate-700 leading-relaxed">{p.post}</p>

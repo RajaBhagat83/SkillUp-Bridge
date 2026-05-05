@@ -33,11 +33,22 @@ function Messanging({ socket }) {
 
   useEffect(() => {
     messageRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages.messages]);
+  }, [messages.messages?.length]);
 
   useEffect(() => {
     setOnline(messages.receiver?.isOnline);
   }, [messages]);
+
+  // Fallback for Vercel deployment where WebSockets are not supported natively
+  useEffect(() => {
+    if (!messages.receiver || !messages.conversationId) return;
+
+    const intervalId = setInterval(() => {
+      fetchMessage(messages.conversationId, messages.receiver, false);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [messages.conversationId, messages.receiver, fetchMessage]);
 
 
   useEffect(() => {
@@ -105,7 +116,7 @@ function Messanging({ socket }) {
     <div className="w-screen h-screen flex flex-col bg-slate-50 dark:bg-[#0b1120] text-slate-800 dark:text-slate-200 font-sans selection:bg-violet-500/30 transition-colors duration-300">
       {/* Background decoration */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-violet-600/5 dark:bg-violet-600/10 blur-[120px] pointer-events-none"></div>
-      
+ 
       <div className="flex flex-grow overflow-hidden relative z-10">
         
         {/* Mobile Sidebar Overlay */}
@@ -115,7 +126,7 @@ function Messanging({ socket }) {
             onClick={() => setIsSidebarOpen(false)}
           />
         )}
-
+  
         <Connection 
           isSidebarOpen={isSidebarOpen} 
           toggleSidebar={() => setIsSidebarOpen(false)} 

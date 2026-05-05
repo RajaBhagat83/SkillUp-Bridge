@@ -14,17 +14,28 @@ let cached = global.mongoose;
 if (!cached) cached = global.mongoose = { conn: null, promise: null };
 
  async function connectToMongoDb() {
-  if (cached.conn) return cached.conn;
+  if (cached.conn) {
+    if (mongoose.connection.readyState === 1) {
+      return cached.conn;
+    }
+    // If not connected, clear cache and reconnect
+    cached.promise = null;
+    cached.conn = null;
+  }
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000,
     }).then((mongoose) => mongoose);
   }
 
-  cached.conn = await cached.promise;
-  console.log("Connected to MongoDB Atlas");
+  try {
+    cached.conn = await cached.promise;
+    console.log("Connected to MongoDB Atlas");
+  } catch (error) {
+    cached.promise = null;
+    throw error;
+  }
   return cached.conn;
 }
 module.exports = connectToMongoDb;

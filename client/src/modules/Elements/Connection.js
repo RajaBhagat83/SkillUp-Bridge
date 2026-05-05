@@ -26,20 +26,29 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
 
   useEffect(() => {
     if (!user?._id) return;
-    (async () => {
-      const res = await fetch(
-        `${BACKEND_URL}/api/conversation/${user._id}`,
-      );
-      const data = await res.json();
-      const search = searchUser.trim().toLowerCase();
-      if (!search) return setConversation(data);
-      setConversation(
-        data.filter((item) =>
-          item.user?.fullName?.toLowerCase().includes(search),
-        ),
-      );
-    })();
-  }, [user,searchUser]);
+    
+    const fetchConversations = async () => {
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/conversation/${user._id}`);
+        const data = await res.json();
+        const search = searchUser.trim().toLowerCase();
+        if (!search) return setConversation(data);
+        setConversation(
+          data.filter((item) =>
+            item.user?.fullName?.toLowerCase().includes(search),
+          ),
+        );
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchConversations();
+    
+    // Fallback polling for Vercel deployment
+    const intervalId = setInterval(fetchConversations, 5000);
+    return () => clearInterval(intervalId);
+  }, [user, searchUser, setConversation]);
 
   const FetchMessages = (conversationId, receiver, openProfile = true) => {
     fetchMessage(conversationId, receiver, true);
@@ -98,7 +107,6 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
                   <div 
                     className="p-1.5 rounded-lg hover:bg-violet-100 dark:hover:bg-violet-500/20 text-violet-500 dark:text-violet-400 hover:text-violet-600 dark:hover:text-violet-300 transition-colors"
                     onClick={(e) => {
-                      e.stopPropagation();
                       navigate("/Messages");
                     }}
                   >
