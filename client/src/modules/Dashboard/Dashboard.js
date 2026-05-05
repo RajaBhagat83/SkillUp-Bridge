@@ -106,7 +106,7 @@ function Dashboard({ handleLogout }) {
             toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
           />
           
-          <div className="pt-24 px-8 pb-12 max-w-3xl mx-auto"> 
+          <div className="pt-20 sm:pt-24 px-0 sm:px-6 md:px-8 pb-12 w-full max-w-3xl mx-auto"> 
             {profile && (
               <div className="mb-8 transition-all duration-500 ease-out">
                 <Profile

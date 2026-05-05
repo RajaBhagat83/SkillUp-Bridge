@@ -99,7 +99,7 @@ export default function PostShow({ canpost, setCanPost, setPosting: setParentPos
             <img
               src={URL.createObjectURL(image)}
               alt="preview"
-              className="w-full max-h-48 object-cover rounded-xl border border-slate-100"
+              className="w-full h-auto max-h-64 object-contain rounded-xl border border-slate-100 bg-slate-50 dark:bg-black/20"
             />
             <button
               onClick={() => setImage(null)}
