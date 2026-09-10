@@ -76,19 +76,19 @@ export default function RagChat() {
             fixed bottom-24 right-5 z-50
             w-[380px] max-w-[calc(100vw-32px)]
             h-[600px] max-h-[calc(100vh-120px)]
-            bg-white
+            bg-white dark:bg-[#0f172a]
             rounded-3xl
             shadow-2xl
             overflow-hidden
             flex flex-col
-            border border-gray-200
+            border border-[#dfe6f0] dark:border-white/10
             animate-[chatOpen_0.25s_ease-out]
           "
         >
           {/* ================= HEADER ================= */}
           <div
             className="
-              bg-gradient-to-r from-blue-600 to-blue-500
+              bg-[#10213d] dark:bg-[#111c31]
               px-5 py-4
               flex items-center justify-between
               text-white
@@ -124,7 +124,7 @@ export default function RagChat() {
               <div>
                 <h2 className="font-semibold text-lg">Chat Assistant</h2>
 
-                <p className="text-sm text-blue-100">
+                <p className="text-sm text-[#b8c7df]">
                   How can I help you today?
                 </p>
               </div>
@@ -161,7 +161,7 @@ export default function RagChat() {
               overflow-y-auto
               p-4
               space-y-4
-              bg-gray-50
+              bg-[#edf2f7] dark:bg-[#0b1120]
             "
           >
             {messages.map((msg) => (
@@ -215,10 +215,10 @@ export default function RagChat() {
                           rounded-br-md
                         `
                         : `
-                          bg-white
-                          text-gray-800
+                          bg-white dark:bg-[#17243c]
+                          text-[#263c60] dark:text-slate-200
                           shadow-sm
-                          border border-gray-100
+                          border border-[#e6ebf2] dark:border-white/10
                           rounded-bl-md
                         `
                     }
@@ -231,15 +231,15 @@ export default function RagChat() {
           </div>
 
           {/* ================= INPUT ================= */}
-          <div className="p-3 bg-white border-t border-gray-200">
+          <div className="p-3 bg-white dark:bg-[#0f172a] border-t border-[#dfe6f0] dark:border-white/10">
             <div
               className="
                 flex items-center
                 gap-2
-                border border-gray-200
+                border border-[#dfe6f0] dark:border-white/10
                 rounded-full
                 px-4 py-2
-                focus-within:border-blue-500
+                focus-within:border-[#155eef]
                 focus-within:ring-2
                 focus-within:ring-blue-100
                 transition
@@ -255,8 +255,8 @@ export default function RagChat() {
                   flex-1
                   outline-none
                   text-sm
-                  text-gray-700
-                  placeholder-gray-400
+                  text-[#263c60] dark:text-slate-200
+                  placeholder-gray-400 dark:placeholder-slate-500
                   bg-transparent
                 "
               />
@@ -268,8 +268,8 @@ export default function RagChat() {
                 className="
                   w-10 h-10
                   rounded-full
-                  bg-blue-600
-                  hover:bg-blue-700
+                  bg-[#155eef]
+                  hover:bg-[#0f4dcc]
                   disabled:bg-gray-300
                   flex items-center justify-center
                   text-white
@@ -310,8 +310,8 @@ export default function RagChat() {
 
             rounded-full
 
-            bg-blue-600
-            hover:bg-blue-700
+            bg-[#155eef]
+            hover:bg-[#0f4dcc]
 
             text-white
 

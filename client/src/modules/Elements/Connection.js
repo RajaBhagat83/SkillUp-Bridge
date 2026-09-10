@@ -39,8 +39,8 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
           const search = searchUser.trim().toLowerCase();
           if (!search) return setConversation(data.filteredResult);
           setConversation(
-            data.filter((item) =>
-              item.filteredResult.user?.fullName?.toLowerCase().includes(search),
+            data.filteredResult.filter((item) =>
+              item.user?.fullName?.toLowerCase().includes(search),
             ),
           );
         }, 500);
@@ -66,17 +66,17 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
 
   return (
     <div
-      className={`fixed md:relative inset-y-0 left-0 z-40 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 w-80 md:w-[30%] md:min-w-[300px] h-full p-6 overflow-y-auto bg-white dark:bg-[#0b1120] md:dark:bg-transparent border-r border-slate-200 dark:border-slate-800/60 pt-24 custom-scrollbar ${className || ""}`}
+      className={`fixed md:relative inset-y-0 left-0 z-40 transform transition-transform duration-300 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 w-80 md:w-[30%] md:min-w-[300px] h-full p-6 overflow-y-auto bg-white dark:bg-[#0b1120] md:dark:bg-transparent border-r border-[#cfdbe8] dark:border-slate-800/60 pt-24 custom-scrollbar ${className || ""}`}
     >
       <div className="flex flex-col gap-4">
         <div className="relative mb-2">
           <SearchIcon
-            className="w-full bg-slate-50 dark:bg-[#1e293b]/50 border border-slate-200 dark:border-white/5 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-violet-500/50 transition-all"
+            className="w-full bg-[#eaf0f6] dark:bg-[#111c31] border border-[#cfdbe8] dark:border-white/10 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-[#155eef]/30 transition-all"
             onChange={(e) => setSearchUsers(e.target.value)}
           />
         </div>
         <div className="flex items-center gap-2 mb-2 px-2">
-          <div className="w-1 h-4 bg-violet-500 rounded-full"></div>
+          <div className="w-1 h-4 bg-[#155eef] rounded-full"></div>
           <div className="text-xs font-bold tracking-widest text-slate-500 dark:text-slate-400 uppercase">
             CONNECTIONS
           </div>
@@ -86,13 +86,32 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
         </div>
 
         <div className="space-y-1">
+          {conversation.length === 0 && (
+            <div className="rounded-2xl border border-dashed border-[#cfdbe8] bg-[#f7f9fc] px-4 py-8 text-center dark:border-white/10 dark:bg-[#111c31]">
+              <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#e4edf8] text-[#155eef] dark:bg-[#172b4d] dark:text-[#9abaf5]">
+                <MdOutlineMessage size={20} />
+              </div>
+              <p className="text-sm font-semibold text-[#243b53] dark:text-slate-200">
+                No conversations yet
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-[#627d98] dark:text-slate-400">
+                Connect with someone new to start building your network.
+              </p>
+              <button
+                onClick={() => navigate("/Search")}
+                className="mt-4 rounded-lg bg-[#155eef] px-3 py-2 text-xs font-bold text-white transition hover:bg-[#0f4dcc]"
+              >
+                Find people
+              </button>
+            </div>
+          )}
           {conversation.map(({ conversationId, user: otherUser }) => (
             <div
               key={conversationId}
-              className="w-full p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/5 border border-transparent hover:border-slate-200 dark:hover:border-white/10 cursor-pointer transition-all duration-300 group relative overflow-hidden"
+              className="w-full p-3 rounded-xl hover:bg-[#fbfcfe] dark:hover:bg-white/5 border border-transparent hover:border-[#dbe8ff] dark:hover:border-white/10 cursor-pointer transition-all duration-300 group relative overflow-hidden"
               onClick={() => FetchMessages(conversationId, otherUser, true)}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/0 via-violet-500/0 to-violet-500/0 group-hover:to-violet-500/5 transition-all duration-500 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#155eef]/0 via-[#155eef]/0 to-[#155eef]/0 group-hover:to-[#155eef]/5 transition-all duration-500 pointer-events-none"></div>
 
               <div className="flex items-center gap-4 relative z-10">
                 <div className="relative">
@@ -101,7 +120,7 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
                       otherUser?.profilePic ? `${otherUser.profilePic}` : goku
                     }
                     loading="lazy"
-                    className="w-12 h-12 rounded-xl object-cover flex-shrink-0 shadow-sm dark:shadow-md group-hover:shadow-violet-500/20 transition-all duration-300 border border-slate-100 dark:border-transparent"
+                    className="w-12 h-12 rounded-xl object-cover flex-shrink-0 shadow-sm dark:shadow-md group-hover:shadow-[#155eef]/20 transition-all duration-300 border border-slate-100 dark:border-transparent"
                     alt="avatar"
                   />
                   <div
@@ -113,7 +132,7 @@ function Connection({ className, isSidebarOpen, toggleSidebar }) {
                   <div className="font-semibold text-sm text-slate-800 dark:text-slate-200 truncate group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                     {otherUser.fullName}
                   </div>
-                  <div className="text-xs text-violet-500 dark:text-violet-400/80 truncate mt-0.5 font-medium">
+                  <div className="text-xs text-[#155eef] dark:text-violet-400/80 truncate mt-0.5 font-medium">
                     {otherUser.interest}
                   </div>
                 </div>

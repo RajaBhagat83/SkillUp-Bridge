@@ -12,7 +12,7 @@ function Taskbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50"
+      className="fixed top-0 left-0 right-0 z-50 border-b border-[#cfdbe8] bg-[#edf2f7]/95 backdrop-blur-xl"
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
@@ -20,35 +20,35 @@ function Taskbar() {
           onClick={() => navigate("/")}
           className="flex items-center gap-2 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 transition-all duration-300">
+          <div className="w-10 h-10 rounded-xl bg-[#155eef] flex items-center justify-center shadow-lg shadow-[#155eef]/20 group-hover:shadow-[#155eef]/35 transition-all duration-300">
             <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 font-inter tracking-tight">
+          <span className="text-2xl font-bold text-[#10213d] tracking-[-0.04em]">
             BuddyFinder
           </span>
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#product" className="hover:text-violet-400 transition-colors">Products</a>
-          <a href="#about" className="hover:text-violet-400 transition-colors">About</a>
-          <a href="#blog" className="hover:text-violet-400 transition-colors">Blog</a>
-          <a href="#contact" className="hover:text-violet-400 transition-colors">Contact</a>
+        <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-[#53627a]">
+          <a href="#product" className="hover:text-[#155eef] transition-colors">Product</a>
+          <a href="#about" className="hover:text-[#155eef] transition-colors">About</a>
+          <a href="#blog" className="hover:text-[#155eef] transition-colors">Community</a>
+          <a href="#contact" className="hover:text-[#155eef] transition-colors">Contact</a>
         </div>
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-4">
           <button 
             onClick={() => navigate('/users/sign_in')}
-            className="px-5 py-2.5 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+            className="px-5 py-2.5 text-sm font-semibold text-[#53627a] hover:text-[#10213d] transition-colors"
           >
             Sign In
           </button>
           <button 
             onClick={() => navigate('/users/sign_up')}
-            className="px-5 py-2.5 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/10 rounded-full backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+            className="px-5 py-2.5 text-sm font-semibold text-white bg-[#10213d] hover:bg-[#1c3155] rounded-lg transition-all hover:-translate-y-0.5 active:scale-95"
           >
             Get Started
           </button>
@@ -56,7 +56,7 @@ function Taskbar() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+          className="md:hidden p-2 text-[#53627a] hover:text-[#10213d] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -68,24 +68,24 @@ function Taskbar() {
         <motion.div 
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl px-6 py-6 space-y-4"
+          className="md:hidden border-t border-[#dfe6f0] bg-[#f5f7fb] px-6 py-6 space-y-4"
         >
-          <div className="flex flex-col gap-4 text-slate-300">
-            <a href="#product" className="hover:text-violet-400" onClick={() => setIsOpen(false)}>Products</a>
-            <a href="#about" className="hover:text-violet-400" onClick={() => setIsOpen(false)}>About</a>
-            <a href="#blog" className="hover:text-violet-400" onClick={() => setIsOpen(false)}>Blog</a>
-            <a href="#contact" className="hover:text-violet-400" onClick={() => setIsOpen(false)}>Contact</a>
+          <div className="flex flex-col gap-4 text-[#53627a]">
+            <a href="#product" className="hover:text-[#155eef]" onClick={() => setIsOpen(false)}>Product</a>
+            <a href="#about" className="hover:text-[#155eef]" onClick={() => setIsOpen(false)}>About</a>
+            <a href="#blog" className="hover:text-[#155eef]" onClick={() => setIsOpen(false)}>Community</a>
+            <a href="#contact" className="hover:text-[#155eef]" onClick={() => setIsOpen(false)}>Contact</a>
           </div>
-          <div className="flex flex-col gap-3 pt-4 border-t border-slate-800">
+          <div className="flex flex-col gap-3 pt-4 border-t border-[#dfe6f0]">
             <button 
               onClick={() => navigate('/users/sign_in')}
-              className="w-full px-5 py-3 text-sm font-semibold bg-slate-900 rounded-xl hover:bg-slate-800 transition-colors"
+              className="w-full px-5 py-3 text-sm font-semibold text-[#10213d] bg-white border border-[#dfe6f0] rounded-lg hover:bg-[#eef2f7] transition-colors"
             >
               Sign In
             </button>
             <button 
               onClick={() => navigate('/users/sign_up')}
-              className="w-full px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl hover:from-violet-500 hover:to-indigo-500 transition-colors"
+              className="w-full px-5 py-3 text-sm font-semibold text-white bg-[#155eef] rounded-lg hover:bg-[#0f4dcc] transition-colors"
             >
               Get Started
             </button>

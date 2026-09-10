@@ -36,13 +36,13 @@ export default function Header({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-200 dark:border-white/10 flex items-center justify-between px-3 md:px-8 shadow-sm transition-colors duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-white dark:bg-[#0f172a] backdrop-blur-md border-b border-[#cfdbe8] dark:border-white/10 flex items-center justify-between px-3 md:px-8 shadow-[0_4px_16px_rgba(16,42,67,0.06)] transition-colors duration-300">
       {/* Left — hamburger + avatar + name */}
       <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
         {toggleSidebar && (
           <button
             onClick={toggleSidebar}
-            className="md:hidden p-1.5 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-white transition-colors"
+            className="md:hidden p-1.5 text-slate-600 dark:text-slate-300 hover:text-[#155eef] dark:hover:text-white transition-colors"
           >
             <FiMenu size={22} />
           </button>
@@ -59,10 +59,10 @@ export default function Header({
               src={user.profilePic}
               alt="avatar"
               loading="lazy"
-              className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover ring-2 ring-violet-100 dark:ring-violet-500/30 group-hover:ring-violet-400 transition-all"
+              className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover ring-2 ring-[#dbe8ff] dark:ring-[#155eef]/30 group-hover:ring-[#155eef] transition-all"
             />
           ) : (
-            <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center text-white text-sm font-bold">
+            <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-[#155eef] flex items-center justify-center text-white text-sm font-bold">
               {user?.fullName?.[0]?.toUpperCase() || "U"}
             </div>
           )}
@@ -75,7 +75,7 @@ export default function Header({
       {/* Center - Search (Desktop only) */}
       <div
         onClick={() => navigate("/Search")}
-        className="hidden lg:flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-white/5 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 transition-all w-64"
+        className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[#eaf0f6] dark:bg-slate-800/50 rounded-lg border border-[#cfdbe8] dark:border-white/5 cursor-pointer hover:bg-[#e2eaf2] dark:hover:bg-slate-800 transition-all w-64"
       >
         <svg
           className="w-4 h-4 text-slate-400"
@@ -121,14 +121,14 @@ export default function Header({
 
         <button
           onClick={() => navigate("/Messages")}
-          className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-[#eef4ff] dark:hover:bg-[#172b4d] hover:text-[#155eef] dark:hover:text-[#9abaf5] transition-colors"
         >
           <MdOutlineMessage size={20} />
         </button>
 
         <button
           onClick={() => navigate("/Whatnew")}
-          className="hidden sm:flex w-10 h-10 rounded-lg items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-600 transition-colors"
+          className="hidden sm:flex w-10 h-10 rounded-lg items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-[#eef4ff] dark:hover:bg-[#172b4d] hover:text-[#155eef] transition-colors"
         >
           <RiMegaphoneLine size={20} />
         </button>

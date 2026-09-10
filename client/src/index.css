@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar{
-  display: none;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #edf2f7;
+    color: #102a43;
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e3eaf2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9aacc1;
+  border-radius: 999px;
 }

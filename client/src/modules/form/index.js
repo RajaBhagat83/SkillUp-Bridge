@@ -46,13 +46,13 @@ function Form({ isSignin = false, setToken, setUser }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 sm:p-8 font-sans selection:bg-violet-500/30">
-      <div className="w-full max-w-6xl min-h-[500px] h-auto lg:h-[600px] flex rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl shadow-violet-900/20">
+    <div className="min-h-screen bg-[#edf2f7] flex items-center justify-center p-4 sm:p-8 font-sans selection:bg-[#155eef]/20">
+      <div className="w-full max-w-6xl min-h-[500px] h-auto lg:h-[600px] flex rounded-2xl overflow-hidden bg-white border border-[#cfdbe8] shadow-2xl shadow-[#102a43]/10">
         {/* Left Side: Dynamic Visual */}
-        <div className="hidden lg:flex w-1/2 relative bg-slate-950 overflow-hidden items-center justify-center">
+        <div className="hidden lg:flex w-1/2 relative bg-[#10213d] overflow-hidden items-center justify-center">
           {/* Abstract background elements */}
-          <div className="absolute top-[-20%] left-[-10%] w-96 h-96 bg-violet-600/30 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-indigo-600/30 rounded-full blur-[120px]"></div>
+          <div className="absolute top-[-20%] left-[-10%] w-96 h-96 bg-[#155eef]/35 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-[#ff8a4c]/25 rounded-full blur-[120px]"></div>
 
           <div className="relative z-10 p-12 text-center">
             <motion.div
@@ -60,7 +60,7 @@ function Form({ isSignin = false, setToken, setUser }) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-violet-500/20 transform rotate-12 hover:rotate-0 transition-transform duration-500">
+                <div className="w-24 h-24 mx-auto bg-[#155eef] rounded-2xl flex items-center justify-center mb-8 shadow-xl shadow-[#155eef]/20 transform rotate-12 hover:rotate-0 transition-transform duration-500">
                 <svg
                   className="w-12 h-12 text-white"
                   fill="none"
@@ -78,7 +78,7 @@ function Form({ isSignin = false, setToken, setUser }) {
               <h1 className="text-4xl font-bold text-white mb-4 tracking-tight">
                 BuddyFinder
               </h1>
-              <p className="text-slate-400 text-lg max-w-sm mx-auto leading-relaxed">
+              <p className="text-[#b8c7df] text-lg max-w-sm mx-auto leading-relaxed">
                 Connect with the brightest minds and accelerate your
                 professional growth.
               </p>
@@ -87,17 +87,17 @@ function Form({ isSignin = false, setToken, setUser }) {
         </div>
 
         {/* Right Side: Form */}
-        <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative bg-slate-900/50 backdrop-blur-sm z-10">
+        <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative bg-white z-10">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="w-full max-w-md mx-auto"
           >
-            <h2 className="text-3xl font-bold text-white mb-2">
+            <h2 className="text-3xl font-bold text-[#10213d] mb-2">
               {isSignin ? "Welcome back" : "Create an account"}
             </h2>
-            <p className="text-slate-400 mb-8">
+            <p className="text-[#53627a] mb-8">
               {isSignin
                 ? "Enter your details to access your dashboard."
                 : "Join our community and start connecting today."}
@@ -113,7 +113,7 @@ function Form({ isSignin = false, setToken, setUser }) {
                     type="text"
                     required
                     placeholder="Full Name"
-                    className="w-full bg-slate-950/50 border border-slate-800 text-white rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all"
+                    className="w-full bg-[#f5f7fb] border border-[#dfe6f0] text-[#10213d] rounded-lg pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#155eef]/20 focus:border-[#155eef] transition-all"
                     value={data.fullName}
                     onChange={(e) =>
                       setData({ ...data, fullName: e.target.value })
@@ -130,7 +130,7 @@ function Form({ isSignin = false, setToken, setUser }) {
                   type="email"
                   required
                   placeholder="Email Address"
-                  className="w-full bg-slate-950/50 border border-slate-800 text-white rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all"
+                  className="w-full bg-[#f5f7fb] border border-[#dfe6f0] text-[#10213d] rounded-lg pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#155eef]/20 focus:border-[#155eef] transition-all"
                   value={data.email}
                   onChange={(e) => setData({ ...data, email: e.target.value })}
                 />
@@ -145,7 +145,7 @@ function Form({ isSignin = false, setToken, setUser }) {
                     type="text"
                     required
                     placeholder="Main Interest or Profession"
-                    className="w-full bg-slate-950/50 border border-slate-800 text-white rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all"
+                    className="w-full bg-[#f5f7fb] border border-[#dfe6f0] text-[#10213d] rounded-lg pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#155eef]/20 focus:border-[#155eef] transition-all"
                     value={data.interest}
                     onChange={(e) =>
                       setData({ ...data, interest: e.target.value })
@@ -163,7 +163,7 @@ function Form({ isSignin = false, setToken, setUser }) {
                     type={showPassword ? "text" : "password"}
                     required
                     placeholder="Password"
-                    className="w-full bg-slate-950/50 border border-slate-800 text-white rounded-xl pl-11 pr-12 py-3.5 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all"
+                    className="w-full bg-[#f5f7fb] border border-[#dfe6f0] text-[#10213d] rounded-lg pl-11 pr-12 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#155eef]/20 focus:border-[#155eef] transition-all"
                     value={data.password}
                     onChange={(e) =>
                       setData({ ...data, password: e.target.value })
@@ -183,7 +183,7 @@ function Form({ isSignin = false, setToken, setUser }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-violet-500/25 active:scale-[0.98] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-[#155eef] hover:bg-[#0f4dcc] text-white font-semibold py-3.5 rounded-lg transition-all shadow-lg shadow-[#155eef]/20 active:scale-[0.98] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading
                   ? "Processing..."
@@ -194,11 +194,11 @@ function Form({ isSignin = false, setToken, setUser }) {
               </button>
             </form>
 
-            <div className="mt-8 text-center text-slate-400 text-sm">
+            <div className="mt-8 text-center text-[#53627a] text-sm">
               {isSignin ? "Don't have an account?" : "Already have an account?"}{" "}
               <button
                 type="button"
-                className="text-violet-400 font-medium hover:text-violet-300 hover:underline transition-all"
+                className="text-[#155eef] font-medium hover:text-[#0f4dcc] hover:underline transition-all"
                 onClick={() =>
                   navigate(`/users/${isSignin ? "sign_up" : "sign_in"}`)
                 }

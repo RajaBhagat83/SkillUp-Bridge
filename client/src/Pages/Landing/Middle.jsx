@@ -32,9 +32,9 @@ function Middle() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-slate-950 text-slate-50 py-24 relative overflow-hidden" id="product">
+    <div className="w-full bg-[#edf2f7] text-[#102a43] py-24 relative overflow-hidden" id="product">
       {/* Background decorations */}
-      <div className="absolute top-1/2 left-0 w-full h-[500px] bg-indigo-900/10 -skew-y-6 transform -translate-y-1/2 z-0"></div>
+      <div className="absolute top-1/2 left-0 w-full h-[500px] bg-[#e2eaf2] -skew-y-6 transform -translate-y-1/2 z-0"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
@@ -44,7 +44,7 @@ function Middle() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-violet-400 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-[#155eef] font-semibold tracking-[0.14em] uppercase text-xs mb-3"
           >
             Why choose BuddyFinder
           </motion.div>
@@ -62,7 +62,7 @@ function Middle() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 text-base md:text-lg px-2"
+            className="text-[#53627a] text-base md:text-lg px-2"
           >
             The fastest way to grow your connection network, scale your projects, and share your insights with a community of driven individuals.
           </motion.p>
@@ -77,13 +77,13 @@ function Middle() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="group p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:bg-slate-800/50 hover:border-violet-500/50 transition-all duration-300 backdrop-blur-sm"
+              className="group p-8 rounded-2xl bg-white border border-[#cfdbe8] hover:border-[#7da7e8] hover:-translate-y-1 transition-all duration-300 shadow-[0_12px_30px_rgba(16,42,67,0.07)]"
             >
-              <div className="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-[#eef4ff] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
                 {feat.icon}
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-slate-100">{feat.title}</h3>
-              <p className="text-slate-400 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-4 text-[#10213d]">{feat.title}</h3>
+              <p className="text-[#53627a] leading-relaxed">
                 {feat.desc}
               </p>
             </motion.div>
@@ -99,7 +99,7 @@ function Middle() {
             className="md:w-1/2 text-center md:text-left"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">The fastest way to grow your connection</h2>
-            <p className="text-slate-400 text-base md:text-lg mb-8 px-4 md:px-0">
+            <p className="text-[#53627a] text-base md:text-lg mb-8 px-4 md:px-0">
               Seamlessly expand your reach with continuous updates that drive efficiency. Find like-minded people, use intelligent filters, and keep track of everything in one place.
             </p>
           </motion.div>
@@ -109,7 +109,7 @@ function Middle() {
             viewport={{ once: true }}
             className="md:w-1/2"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/20 border border-slate-800 bg-slate-900/30 p-4">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-[#10213d]/10 border border-[#dfe6f0] bg-white p-4">
               <img src={Connection} loading="lazy" alt="Connections Dashboard" className="w-full h-auto object-contain max-h-[400px] mx-auto opacity-90 hover:opacity-100 transition-opacity" />
             </div>
           </motion.div>
@@ -124,15 +124,15 @@ function Middle() {
             className="md:w-1/2 text-center md:text-left"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">Scale faster with dedicated support</h2>
-            <ul className="space-y-4 text-slate-400 text-base md:text-lg px-4 md:px-0 text-left">
+            <ul className="space-y-4 text-[#53627a] text-base md:text-lg px-4 md:px-0 text-left">
               <li className="flex items-start gap-3">
-                <span className="text-violet-500 mt-1">●</span> Share feedback to shape updates that make your journey smoother.
+                <span className="text-[#ff8a4c] mt-1">●</span> Share feedback to shape updates that make your journey smoother.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-violet-500 mt-1">●</span> Invite others to share their insights and grow together as a community.
+                <span className="text-[#ff8a4c] mt-1">●</span> Invite others to share their insights and grow together as a community.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-violet-500 mt-1">●</span> Connect, share, and gain access to the best crowd to help you succeed.
+                <span className="text-[#ff8a4c] mt-1">●</span> Connect, share, and gain access to the best crowd to help you succeed.
               </li>
             </ul>
           </motion.div>
@@ -142,7 +142,7 @@ function Middle() {
             viewport={{ once: true }}
             className="md:w-1/2"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/20 border border-slate-800 flex justify-center bg-slate-900/30 p-4">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-[#10213d]/10 border border-[#dfe6f0] flex justify-center bg-white p-4">
               <img src={World} loading="lazy" alt="Global Network" className="w-full h-auto object-contain max-h-[400px] mx-auto opacity-90 hover:opacity-100 transition-opacity drop-shadow-2xl" />
             </div>
           </motion.div>
@@ -153,17 +153,17 @@ function Middle() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 p-12 md:p-16 rounded-[3rem] bg-gradient-to-r from-violet-600 to-indigo-600 relative overflow-hidden flex flex-col md:flex-row items-center justify-between"
+          className="mt-20 p-12 md:p-16 rounded-2xl bg-[#10213d] relative overflow-hidden flex flex-col md:flex-row items-center justify-between shadow-2xl shadow-[#10213d]/15"
         >
           {/* Decorative circles */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#155eef]/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff8a4c]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
 
           <div className="relative z-10 md:w-2/3 text-center md:text-left mb-8 md:mb-0">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Scale faster with dedicated support
             </h3>
-            <p className="text-violet-200 text-lg">
+            <p className="text-[#b8c7df] text-lg">
               Join thousands of professionals already accelerating their growth.
             </p>
           </div>
@@ -171,7 +171,7 @@ function Middle() {
           <div className="relative z-10">
             <button 
               onClick={() => navigate('/users/sign_up')}
-              className="px-8 py-4 bg-white text-indigo-600 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-white/20 transition-all active:scale-95 whitespace-nowrap cursor-pointer"
+              className="px-8 py-4 bg-[#ff8a4c] text-[#10213d] rounded-lg font-bold text-lg hover:bg-[#ff9f6c] transition-all active:scale-95 whitespace-nowrap cursor-pointer"
             >
               Join the Community
             </button>

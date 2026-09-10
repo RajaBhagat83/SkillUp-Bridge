@@ -106,12 +106,12 @@ export default function ProfilePage({
   console.log("ViewingOwnProfile", ViewingOwnProfile);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-transparent pt-16 pb-12 transition-colors duration-300">
+    <div className="min-h-screen bg-[#edf2f7] dark:bg-[#0b1120] pt-16 pb-12 transition-colors duration-300">
       <div className="max-w-2xl mx-auto px-4">
         {/* ── Profile Card ── */}
-        <div className="bg-white/90 dark:bg-[#0f172a]/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/5 shadow-sm dark:shadow-xl overflow-hidden mb-6 transition-colors duration-300">
+        <div className="bg-white dark:bg-[#0f172a] rounded-2xl border border-[#cfdbe8] dark:border-white/5 shadow-[0_12px_32px_rgba(16,42,67,0.09)] dark:shadow-xl overflow-hidden mb-6 transition-colors duration-300">
           {/* Banner */}
-          <div className="h-28 bg-gradient-to-r from-violet-600 to-fuchsia-600 relative overflow-hidden">
+          <div className="h-28 bg-[#10213d] relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10 mix-blend-overlay"></div>
             <div
               className="absolute inset-0 opacity-20"
@@ -128,7 +128,7 @@ export default function ProfilePage({
             <div className="flex items-end justify-between -mt-12 mb-4 relative z-10">
               {/* Avatar */}
               <div className="relative">
-                <div className="w-24 h-24 rounded-2xl border-4 border-white dark:border-[#0f172a] shadow-md dark:shadow-xl overflow-hidden bg-violet-100 dark:bg-violet-900/50 transition-colors duration-300">
+                <div className="w-24 h-24 rounded-2xl border-4 border-white dark:border-[#0f172a] shadow-md dark:shadow-xl overflow-hidden bg-[#eef4ff] dark:bg-violet-900/50 transition-colors duration-300">
                   {preview ? (
                     <img
                       src={preview}
@@ -146,7 +146,7 @@ export default function ProfilePage({
                   <>
                     <button
                       onClick={() => fileInputRef.current.click()}
-                      className="absolute -bottom-2 -right-2 w-8 h-8 bg-violet-600 hover:bg-violet-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/30 transition-all hover:scale-105"
+                      className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#155eef] hover:bg-[#0f4dcc] text-white rounded-lg flex items-center justify-center shadow-lg shadow-[#155eef]/30 transition-all hover:scale-105"
                     >
                       <svg
                         className="w-4 h-4"
@@ -182,7 +182,7 @@ export default function ProfilePage({
                       });
                       navigate("/Messages");
                     }}
-                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold rounded-xl transition-all shadow-md shadow-violet-500/20 hover:shadow-lg hover:shadow-violet-500/40 hover:-translate-y-0.5"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 bg-[#155eef] hover:bg-[#0f4dcc] text-white text-sm font-semibold rounded-lg transition-all shadow-md shadow-[#155eef]/20 hover:shadow-lg hover:shadow-[#155eef]/30 hover:-translate-y-0.5"
                   >
                     <svg
                       className="w-4 h-4"
@@ -218,7 +218,7 @@ export default function ProfilePage({
             </div>
 
             {/* Stats row */}
-            <div className="flex items-center gap-8 py-4 border-t border-b border-slate-100 dark:border-white/5 mb-6 bg-slate-50/50 dark:bg-white/5 rounded-2xl px-6 transition-colors duration-300">
+            <div className="flex items-center gap-8 py-4 border-t border-b border-[#d4dfeb] dark:border-white/10 mb-6 bg-[#eaf0f6] dark:bg-[#111c31] rounded-xl px-6 transition-colors duration-300">
               <div className="text-center flex-1">
                 <div className="text-2xl font-bold text-slate-800 dark:text-slate-200 transition-colors duration-300">
                   {usersPost.length}
@@ -247,7 +247,7 @@ export default function ProfilePage({
                 {displayUser.interest?.split(",").map((tag, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 text-xs font-semibold rounded-full border border-violet-200 dark:border-violet-500/20 shadow-sm transition-colors duration-300"
+                    className="px-3 py-1 bg-[#eef4ff] dark:bg-[#172b4d] text-[#155eef] dark:text-[#9abaf5] text-xs font-semibold rounded-full border border-[#dbe8ff] dark:border-[#27456f] shadow-sm transition-colors duration-300"
                   >
                     {tag.trim()}
                   </span>
@@ -274,7 +274,7 @@ export default function ProfilePage({
               {[1, 2].map((i) => (
                 <div
                   key={i}
-                  className="bg-white/90 dark:bg-[#0f172a]/80 backdrop-blur-xl rounded-2xl border border-slate-200 dark:border-white/5 p-5 animate-pulse"
+                  className="bg-white dark:bg-[#0f172a] rounded-2xl border border-[#cfdbe8] dark:border-white/10 p-5 animate-pulse"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-11 h-11 rounded-full bg-slate-200 dark:bg-[#1e293b]" />
@@ -294,7 +294,7 @@ export default function ProfilePage({
 
           {/* Empty */}
           {!postsLoading && usersPost.length === 0 && (
-            <div className="bg-white/90 dark:bg-[#0f172a]/80 backdrop-blur-xl rounded-3xl border border-slate-200 dark:border-white/5 p-12 flex flex-col items-center text-center shadow-sm dark:shadow-xl transition-colors duration-300">
+            <div className="bg-white dark:bg-[#0f172a] rounded-2xl border border-[#cfdbe8] dark:border-white/10 p-12 flex flex-col items-center text-center shadow-[0_8px_22px_rgba(16,42,67,0.06)] dark:shadow-xl transition-colors duration-300">
               <div className="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-white/5 flex items-center justify-center mb-4 border border-slate-100 dark:border-transparent">
                 <svg
                   className="w-8 h-8 text-slate-300 dark:text-slate-500"
@@ -367,13 +367,13 @@ function PostCard({ p }) {
   const [likes, setLikes] = useState(Math.floor(Math.random() * 20));
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
+    <div className="bg-white dark:bg-[#0f172a] rounded-2xl border border-[#cfdbe8] dark:border-white/10 shadow-[0_6px_18px_rgba(16,42,67,0.05)] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 px-5 pt-5 pb-3">
         {/* <div className="absolute top-3 left-[500px] px-4 py-2 bg-gray-200 cursor-pointer" onClick={() =>{
           
          }}>delete</div> */}
-        <div className="w-10 h-10 rounded-full overflow-hidden bg-violet-100 flex-shrink-0">
+        <div className="w-10 h-10 rounded-full overflow-hidden bg-[#eef4ff] dark:bg-[#172b4d] flex-shrink-0">
           {p.profilePic ? (
             <img
               src={p.profilePic}
@@ -382,7 +382,7 @@ function PostCard({ p }) {
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-violet-500 font-bold text-sm">
+            <div className="w-full h-full flex items-center justify-center text-[#155eef] dark:text-[#9abaf5] font-bold text-sm">
               {p.fullName?.[0]?.toUpperCase() || "U"}
             </div>
           )}
@@ -390,11 +390,11 @@ function PostCard({ p }) {
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-semibold text-slate-900">
+            <span className="text-sm font-semibold text-[#10213d] dark:text-white">
               {p.fullName}
             </span>
             {p.interest && (
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-violet-50 text-violet-600 font-medium border border-violet-100">
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#eef4ff] dark:bg-[#172b4d] text-[#155eef] dark:text-[#9abaf5] font-medium border border-[#dbe8ff] dark:border-[#27456f]">
                 {p.interest}
               </span>
             )}
@@ -406,29 +406,29 @@ function PostCard({ p }) {
 
       {/* Body */}
       <div className="px-5 pb-3">
-        <p className="text-sm text-slate-700 leading-relaxed">{p.post}</p>
+        <p className="text-sm text-[#263c60] dark:text-slate-200 leading-relaxed">{p.post}</p>
       </div>
 
       {/* Post image */}
       {p.postPic && (
-        <div className="mx-5 mb-4 rounded-xl overflow-hidden border border-slate-100">
+          <div className="mx-5 mb-4 rounded-xl overflow-hidden border border-[#e6ebf2] dark:border-white/10">
           <img
             src={p.postPic}
             alt="post"
             loading="lazy"
-            className="w-full max-h-72 object-contain bg-slate-50"
+            className="w-full max-h-72 object-contain bg-[#f5f7fb] dark:bg-[#111c31]"
           />
         </div>
       )}
 
       {/* Actions */}
-      <div className="flex flex-wrap items-center gap-2 px-4 py-3 border-t border-slate-100 justify-between sm:justify-start">
+      <div className="flex flex-wrap items-center gap-2 px-4 py-3 border-t border-[#e6ebf2] dark:border-white/10 justify-between sm:justify-start">
         <button
           onClick={() => {
             setLiked(!liked);
             setLikes((l) => (liked ? l - 1 : l + 1));
           }}
-          className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer ${liked ? "text-violet-600 bg-violet-50" : "text-slate-400 hover:text-slate-600 hover:bg-slate-50"}`}
+          className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer ${liked ? "text-[#155eef] bg-[#eef4ff] dark:bg-[#172b4d]" : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5"}`}
         >
           <svg
             className="w-3.5 h-3.5"
@@ -441,7 +441,7 @@ function PostCard({ p }) {
           </svg>
           {likes}
         </button>
-        <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer">
+        <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
           <svg
             className="w-3.5 h-3.5"
             viewBox="0 0 24 24"
@@ -453,7 +453,7 @@ function PostCard({ p }) {
           </svg>
           Comment
         </button>
-        <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors cursor-pointer">
+        <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors cursor-pointer">
           <svg
             className="w-3.5 h-3.5"
             viewBox="0 0 24 24"

@@ -56,7 +56,7 @@ function SmartAvatar({ profilePic, name, className = "w-11 h-11" }) {
 
 function PostingSkeleton() {
   return (
-    <div className="bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/5 p-5 shadow-sm animate-pulse transition-colors duration-300">
+    <div className="bg-white dark:bg-[#0f172a] rounded-2xl border border-[#cfdbe8] dark:border-white/10 p-5 shadow-sm animate-pulse transition-colors duration-300">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-11 h-11 rounded-full bg-slate-200 dark:bg-[#1e293b] flex-shrink-0" />
         <div className="flex-1 space-y-2">
@@ -83,7 +83,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
   };
 
   return (
-    <div className="bg-white dark:bg-[#0f172a] sm:rounded-3xl sm:border border-slate-200 dark:border-white/10 shadow-sm transition-all duration-300 overflow-hidden group mb-4 sm:mb-6">
+    <article className="bg-white dark:bg-[#0f172a] sm:rounded-2xl sm:border border-[#cfdbe8] dark:border-white/10 shadow-[0_10px_26px_rgba(16,42,67,0.08)] transition-all duration-300 overflow-hidden group mb-4 sm:mb-6 hover:shadow-[0_16px_34px_rgba(16,42,67,0.13)]">
       {/* Header */}
       <div className="flex items-center gap-3 sm:gap-4 px-4 sm:px-6 pt-4 sm:pt-5 pb-2 sm:pb-3">
         <SmartAvatar
@@ -94,7 +94,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span
-              className="text-[16px] font-bold text-slate-900 dark:text-white cursor-pointer hover:text-violet-600 transition-colors"
+              className="text-[16px] font-bold text-[#10213d] dark:text-white cursor-pointer hover:text-[#155eef] transition-colors"
               onClick={() => {
                 navigate(`/Profile/${p.userId}`);
               }}
@@ -121,7 +121,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
               });
               navigate("/Messages");
             }}
-            className="p-2 sm:px-4 sm:py-2 rounded-full sm:rounded-xl text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 hover:bg-violet-100 dark:hover:bg-violet-500/20 transition-all flex items-center gap-2 flex-shrink-0 font-semibold text-sm"
+            className="p-2 sm:px-4 sm:py-2 rounded-lg text-[#155eef] dark:text-violet-400 bg-[#eef4ff] dark:bg-violet-500/10 hover:bg-[#dbe8ff] dark:hover:bg-violet-500/20 transition-all flex items-center gap-2 flex-shrink-0 font-semibold text-sm"
           >
             <MdOutlineMessage className="w-5 h-5 sm:w-4 sm:h-4" />
             <span className="hidden sm:inline">Message</span>
@@ -131,19 +131,19 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
 
       {/* Post text */}
       <div className="px-4 sm:px-6 pb-3 pt-1">
-        <p className="text-[16px] sm:text-[17px] text-slate-800 dark:text-slate-200 leading-normal font-normal whitespace-pre-wrap">
+        <p className="text-[16px] sm:text-[17px] text-[#243b53] dark:text-slate-200 leading-relaxed font-normal whitespace-pre-wrap">
           {p.post}
         </p>
       </div>
 
       {/* Post image */}
       {p.postPic && (
-        <div className="w-full bg-slate-50 dark:bg-black/20 border-y border-slate-100 dark:border-white/5 flex items-center justify-center overflow-hidden">
+        <div className="w-full bg-[#eaf0f6] dark:bg-black/20 border-y border-[#d4dfeb] dark:border-white/5 p-2 sm:p-3 flex items-center justify-center overflow-hidden">
           <img
             src={p.postPic}
             loading="lazy"
             alt="post"
-            className="w-full h-auto max-h-[500px] md:max-h-[650px] object-contain"
+            className="w-full h-auto max-h-[500px] md:max-h-[650px] rounded-xl object-contain shadow-sm"
           />
         </div>
       )}
@@ -177,7 +177,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
             <span>{likes}</span>
           </button>
 
-          <button className="flex items-center gap-2 text-[15px] px-3 py-2 rounded-full font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all">
+          <button className="flex items-center gap-2 text-[15px] px-3 py-2 rounded-lg font-semibold text-slate-500 dark:text-slate-400 hover:text-[#155eef] dark:hover:text-slate-200 transition-all">
             <svg
               className="w-6 h-6"
               viewBox="0 0 24 24"
@@ -195,7 +195,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
           </button>
         </div>
 
-        <button className="flex items-center gap-2 text-[15px] px-3 py-2 rounded-full font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all">
+        <button className="flex items-center gap-2 text-[15px] px-3 py-2 rounded-lg font-semibold text-slate-500 dark:text-slate-400 hover:text-[#155eef] dark:hover:text-slate-200 transition-all">
           <svg
             className="w-6 h-6"
             viewBox="0 0 24 24"
@@ -212,7 +212,7 @@ const PostCard = React.memo(function PostCard({ p, fullName }) {
           <span className="hidden sm:inline">Share</span>
         </button>
       </div>
-    </div>
+    </article>
   );
 });
 
@@ -295,7 +295,7 @@ export default function PostPage() {
       {/* Write a post trigger bar */}
       <div className="px-3 sm:px-0">
         <div
-          className="flex items-center gap-3 sm:gap-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 rounded-full sm:rounded-2xl p-2 sm:p-4 shadow-sm cursor-pointer hover:border-violet-300 transition-all duration-300 group"
+          className="flex items-center gap-3 sm:gap-4 bg-white dark:bg-[#0f172a] border border-[#cfdbe8] dark:border-white/10 rounded-xl p-2 sm:p-4 shadow-[0_6px_18px_rgba(16,42,67,0.05)] cursor-pointer hover:border-[#7da7e8] transition-all duration-300 group"
           onClick={() => setCanPost(true)}
         >
           <SmartAvatar
@@ -303,10 +303,10 @@ export default function PostPage() {
             name={user?.fullName}
             className="w-10 h-10 ml-1 sm:ml-0"
           />
-          <div className="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-white/5 rounded-full sm:rounded-xl px-4 py-2.5 text-[15px] text-slate-500 dark:text-slate-400 group-hover:bg-slate-100 dark:group-hover:bg-slate-800 transition-colors truncate">
+          <div className="flex-1 bg-[#eaf0f6] dark:bg-[#111c31] border border-[#d4dfeb] dark:border-white/10 rounded-full sm:rounded-xl px-4 py-2.5 text-[15px] text-[#52647d] dark:text-slate-400 group-hover:bg-[#e2eaf2] dark:group-hover:bg-[#17243c] transition-colors truncate">
             What's on your mind?
           </div>
-          <button className="hidden sm:block text-sm font-bold text-white bg-violet-600 hover:bg-violet-500 px-6 py-2.5 rounded-xl shadow-md transition-all">
+          <button className="hidden sm:block text-sm font-bold text-white bg-[#155eef] hover:bg-[#0f4dcc] px-6 py-2.5 rounded-lg shadow-md shadow-[#155eef]/20 transition-all">
             Post
           </button>
         </div>

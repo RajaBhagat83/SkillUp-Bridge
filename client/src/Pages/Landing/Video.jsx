@@ -7,12 +7,12 @@ function Video() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 1, type: "spring" }}
-      className="mt-20 w-full max-w-5xl bg-gradient-to-b from-slate-800/80 to-slate-900 border border-slate-700/50 rounded-t-2xl shadow-2xl relative overflow-hidden"
+      className="mt-20 w-full max-w-5xl bg-white border border-[#dfe6f0] rounded-t-2xl shadow-2xl shadow-[#10213d]/10 relative overflow-hidden"
     >
-      <div className="absolute top-0 left-0 right-0 h-12 border-b border-slate-700/50 flex items-center px-6 gap-2 bg-slate-900/80 backdrop-blur-md z-20">
-        <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
-        <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
-        <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+      <div className="absolute top-0 left-0 right-0 h-12 border-b border-[#dfe6f0] flex items-center px-6 gap-2 bg-white z-20">
+        <div className="w-3 h-3 rounded-full bg-[#ff8a4c]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#f7c84b]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#35b779]"></div>
       </div>
       <div className="relative pt-12 w-full aspect-video bg-black">
         <video
@@ -32,9 +32,9 @@ function Video() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-8 left-8 right-8 z-30"
         >
-          <div className="bg-slate-900/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl inline-block max-w-md">
+          <div className="bg-[#10213d]/90 backdrop-blur-md border border-white/10 p-4 rounded-xl inline-block max-w-md">
             <p className="text-white text-lg font-medium">
-              <span className="text-amber-400">Search People</span> with Similar Interest
+              <span className="text-[#ffb17f]">Search People</span> with Similar Interest
               and connect easily.
             </p>
           </div>
